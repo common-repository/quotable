@@ -1,0 +1,30 @@
+{
+  "name": "quotable-wp",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Adds buttons to quotes and text selection that make it quick and easy for your readers to share quotes from your WordPress website.",
+  "main": "build/admin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:admin && npm run build:public",
+    "build:admin": "wp-scripts build admin/js/quotable-admin.js --output-path=admin --output-filename=bundle.js",
+    "build:public": "wp-scripts build public/js/quotable-public.js --output-path=public --output-filename=bundle.js",
+    "build:watch": "npm run watch:admin && npm run watch:public",
+    "watch:admin": "wp-scripts start admin/js/quotable-admin.js --output-path=admin --output-filename=bundle.js",
+    "watch:public": "wp-scripts start public/js/quotable-public.js --output-path=public --output-filename=bundle.js"
+  },
+  "author": "Jo Sprague <josiah.sprague@gmail.com>",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "@wordpress/blocks": "^6.14.1",
+    "@wordpress/components": "^9.4.1",
+    "@wordpress/data": "^4.16.1",
+    "@wordpress/edit-post": "^3.15.1",
+    "@wordpress/i18n": "^3.11.0",
+    "@wordpress/plugins": "^2.14.1",
+    "quotable-toolbar": "^1.0.3"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^8.0.1"
+  }
+}
